@@ -1,0 +1,22 @@
+#next,
+#back {
+  border: none;
+  width: 4px;
+  height: 30px;
+}
+
+#back {
+  qproperty-icon: url(:/icons/icons/back.png);
+}
+
+#next {
+  qproperty-icon: url(:/icons/icons/next.png);
+}
+
+#back:pressed {
+  padding-right: 3px;
+}
+
+#next:pressed {
+  padding-left: 3px;
+}
