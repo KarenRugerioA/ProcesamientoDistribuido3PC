@@ -40,24 +40,24 @@ El código sigue la siguiente lógica:
 
 Para realizar la interfaz gráfica se hizo uso de Qt Designer, la cual permite crear interfaces de usuario. Con esta herramienta, se diseñó y personalizó la interfaz de usuario, agregando dos graphicViews, una para la carga de la imágen y la otra para simular un carrusel para desplegar las imágenes resultantes. Así mismo cuenta con un comboBox que permite al usuario definir la cantidad de capas de desenfoque que se aplicarán a las imágenes. Se tiene un botón de Run, el cual se encarga de triggerear la acción de desenfoque en paralelo y finalmente se tienen 3 pushButton, que cambian de rojo a verde cuando la computadora en cuestión se encuentra en la red y lista para realizar el proceso de desenfoque. Por lo que el sistema, solamente repartirá el trabajo haciendo uso de las computadoras conectadas en ese momento y desplegará esta información en la interfaz. 
 
-Se tienen 2 archivos que conforman la interfaz gráfica. El primero es main.py el cual contiene los componentes y su ubicación en la pantalla principal. El segundo archivo es cess.py el cual contiene las acciones que cada componente debe realizar.  El comportamiento de las funciones en estas últimas es el siguiente:
-- hardwarestatus: esta función cambia el color de los botones pushButton, pushButton_4 y pushButton_5 según el estado de los dispositivos. Si están encendidos, el botón se volverá verde, y si están apagados, se volverá rojo.
+Se tienen 2 archivos que conforman la interfaz gráfica. El primero es **main.py** el cual contiene los componentes y su ubicación en la pantalla principal. El segundo archivo es **cess.py** el cual contiene las acciones que cada componente debe realizar.  El comportamiento de las funciones en estas últimas es el siguiente:
+- **hardwarestatus**: esta función cambia el color de los botones ***pushButton***, ***pushButton_4*** y ***pushButton_5*** según el estado de los dispositivos. Si están encendidos, el botón se volverá verde, y si están apagados, se volverá rojo.
 
-- dragEnterEvent: es un método que se llama cuando se arrastra un objeto en el graphicsView. Este método comprueba si el objeto que se arrastra es una imagen. Si es así, se acepta la acción y se llama a la función dropEvent.
+- **dragEnterEvent**: es un método que se llama cuando se arrastra un objeto en el ***graphicsView***. Este método comprueba si el objeto que se arrastra es una imagen. Si es así, se acepta la acción y se llama a la función ***dropEvent***.
 
-- dropEvent: es un método que se llama cuando se suelta el objeto en el graphicsView. El método obtiene la ruta de la imagen y llama a la función setImage para establecer la imagen en el graphicsView.
+- **dropEvent**: es un método que se llama cuando se suelta el objeto en el ***graphicsView***. El método obtiene la ruta de la imagen y llama a la función ***setImage*** para establecer la imagen en el ***graphicsView***.
 
-- getMaskNumber: es un método estático que devuelve el número de la máscara de desenfoque actual.
+- **getMaskNumber**: es un método estático que devuelve el número de la máscara de desenfoque actual.
 
-- getFolderImages: es un método estático que obtiene todas las imágenes en la carpeta nueva_blur y las almacena en la variable fileList.
+- **getFolderImages**: es un método estático que obtiene todas las imágenes en la carpeta ***nueva_blur*** y las almacena en la variable ***fileList***.
 
-- setImage: es un método que establece la imagen en el objeto Qt especificado.
+- **setImage**: es un método que establece la imagen en el objeto Qt especificado.
 
-- imageCarousel: esta función se encarga de mostrar las imágenes en la carpeta nueva_blur. Al hacer clic en los botones back y next, la función cambia la imagen en graphicsView_2.
+- **imageCarousel**: esta función se encarga de mostrar las imágenes en la carpeta ***nueva_blur***. Al hacer clic en los botones ***back*** y ***next***, la función cambia la imagen en ***graphicsView_2***.
 
-- continuouslygetFolderImages: esta función se encarga de obtener las imágenes de la carpeta nueva_blur de forma continua hasta que se encuentre una imagen. Una vez que se encuentra una imagen, se llama a la función changeStatus.
+- **continuouslygetFolderImages**: esta función se encarga de obtener las imágenes de la carpeta ***nueva_blur*** de forma continua hasta que se encuentre una imagen. Una vez que se encuentra una imagen, se llama a la función ***changeStatus***.
 
-- changeStatus: esta función cambia el estado de los botones back, next, run y reset dependiendo de si se ha seleccionado una imagen o no. Si no se ha seleccionado una imagen, los botones se desactivan. Si se ha seleccionado una imagen, los botones se activan.
+- **changeStatus**: esta función cambia el estado de los botones ***back***, ***next***, ***run*** y ***reset*** dependiendo de si se ha seleccionado una imagen o no. Si no se ha seleccionado una imagen, los botones se desactivan. Si se ha seleccionado una imagen, los botones se activan.
 
 La interfaz gráfica luce de la siguiente manera: 
 ![gui_inicial](https://github.com/KarenRugerioA/ProcesamientoDistribuido3PC/blob/main/imagenes/gui_inicial.png)
