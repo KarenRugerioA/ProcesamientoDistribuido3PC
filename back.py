@@ -8,7 +8,7 @@ class ImageProccessing(object):
         for host in self.hosts:
             try:
                 # timeout after 5 seconds to avoid delays
-                result = subprocess.run(["ssh", host, "hostname"], capture_output=True, text=True, timeout=1)
+                result = subprocess.run(["ssh", host, "hostname"], capture_output=True, text=True, timeout=5)
 
             except subprocess.CalledProcessError:
                 print("Exception: error running subprocess to test ssh connections")
